@@ -30,11 +30,20 @@ export const useBoundStore = create<AllSlices>()(
         currentFuelL: state.currentFuelL,
       }),
       merge: (persistedState, currentState) => {
-        // Custom merge to ensure actions are preserved
         const typedPersistedState = persistedState as Partial<AllSlices>;
+
+        // Perform a deep merge for the 'settings' object to ensure default
+        // values are preserved when loading a partial or older state. This
+        // prevents a common crash where `settings` becomes undefined.
+        const mergedSettings = {
+          ...currentState.settings,
+          ...(typedPersistedState?.settings || {}),
+        };
+
         return {
           ...currentState,
           ...typedPersistedState,
+          settings: mergedSettings,
         };
       },
     },
