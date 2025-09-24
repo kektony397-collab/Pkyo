@@ -1,9 +1,11 @@
-
 import React from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../../../services/db';
-import { FixedSizeList as List } from 'react-window';
+import * as ReactWindow from 'react-window';
 import { formatDate, formatCurrency } from '../../../lib/formatters';
+
+// Defensively access FixedSizeList to handle different module export structures from the CDN.
+const List = (ReactWindow as any).FixedSizeList || (ReactWindow as any).default?.FixedSizeList;
 
 function HistoryList() {
   const refuelRecords = useLiveQuery(
@@ -48,6 +50,10 @@ function HistoryList() {
       </div>
     );
   };
+
+  if (!List) {
+      return <p>Error: Could not load the list component from 'react-window'.</p>;
+  }
 
   return (
     <div className='h-full w-full'>
