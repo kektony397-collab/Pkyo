@@ -1,0 +1,66 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Bike Dashboard</title>
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Orbitron"', 'sans-serif'],
+              mono: ['"Share Tech Mono"', 'monospace'],
+            },
+            colors: {
+              'brand-dark': '#0a0a0a',
+              'brand-light': '#f5f5f5',
+              'brand-primary': '#00f5d4',
+              'brand-secondary': '#9b5de5',
+              'brand-accent': '#f15bb5',
+              'brand-error': '#ff0054',
+            },
+            backgroundImage: {
+              'neon-gradient': 'linear-gradient(90deg, #00f5d4, #9b5de5, #f15bb5)',
+            },
+            boxShadow: {
+              'neon-primary': '0 0 5px #00f5d4, 0 0 10px #00f5d4, 0 0 20px #00f5d4',
+              'neon-accent': '0 0 5px #f15bb5, 0 0 10px #f15bb5',
+            },
+          },
+        },
+      };
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.2",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "zustand": "https://aistudiocdn.com/zustand@^5.0.8",
+    "zustand/": "https://aistudiocdn.com/zustand@^5.0.8/",
+    "dexie": "https://aistudiocdn.com/dexie@^4.2.0",
+    "@headlessui/react": "https://aistudiocdn.com/@headlessui/react@^2.2.8",
+    "dexie-react-hooks": "https://aistudiocdn.com/dexie-react-hooks@^4.2.0",
+    "react-window": "https://aistudiocdn.com/react-window@^2.1.1",
+    "kalmanjs": "https://aistudiocdn.com/kalmanjs@^1.1.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-brand-dark text-brand-light font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
