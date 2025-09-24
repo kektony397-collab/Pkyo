@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Card from '../../../components/Card';
 
@@ -14,7 +13,7 @@ const GpsStatus = React.memo(({ isAvailable }: GpsStatusProps) => {
         <div className="flex items-center gap-2">
           <span
             className={`h-3 w-3 rounded-full ${
-              isAvailable ? 'animate-pulse bg-brand-primary' : 'bg-brand-error'
+              isAvailable ? 'animate-pulse-slow bg-brand-primary' : 'bg-brand-error'
             }`}
           ></span>
           <p className="font-mono text-xl">

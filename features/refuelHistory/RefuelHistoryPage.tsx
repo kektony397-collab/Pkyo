@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useBoundStore } from '../../store/useBoundStore';
 import Card from '../../components/Card';
@@ -11,6 +10,7 @@ function RefuelHistoryPage() {
 
   const [liters, setLiters] = useState('');
   const [totalCost, setTotalCost] = useState('');
+  const [notes, setNotes] = useState('');
 
   const handleAddRecord = async () => {
     const litersNum = parseFloat(liters);
@@ -26,10 +26,12 @@ function RefuelHistoryPage() {
       liters: litersNum,
       totalCost: totalCostNum,
       odometerKm: totalOdometerKm,
+      notes: notes,
     });
 
     setLiters('');
     setTotalCost('');
+    setNotes('');
   };
 
   return (
@@ -73,6 +75,19 @@ function RefuelHistoryPage() {
                   onChange={(e) => setTotalCost(e.target.value)}
                   className="mt-1 block w-full rounded-md border-gray-600 bg-brand-dark/50 shadow-sm focus:border-brand-primary focus:ring-brand-primary sm:text-sm"
                   step="0.01"
+                />
+              </div>
+              <div>
+                <label htmlFor="notes" className="block text-sm">
+                  Notes (Optional)
+                </label>
+                <textarea
+                  id="notes"
+                  rows={3}
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  className="mt-1 block w-full rounded-md border-gray-600 bg-brand-dark/50 shadow-sm focus:border-brand-primary focus:ring-brand-primary sm:text-sm"
+                  placeholder="e.g., Shell V-Power"
                 />
               </div>
               <Button type="submit" className="w-full">

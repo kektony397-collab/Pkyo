@@ -1,4 +1,3 @@
-
 import useGpsProcessor from './hooks/useGpsProcessor';
 import useFuelCalculator from './hooks/useFuelCalculator';
 import { useBoundStore } from '../../store/useBoundStore';
@@ -32,7 +31,7 @@ function DashboardPage() {
   );
 
   return (
-    <div className="grid h-full grid-cols-1 grid-rows-3 gap-4 p-4 md:grid-cols-3 md:grid-rows-2">
+    <div className="grid h-full grid-cols-1 grid-rows-3 gap-6 p-6 md:grid-cols-3 md:grid-rows-2">
       <div className="flex items-center justify-center md:col-span-2 md:row-span-2">
         <Speedometer speed={currentSpeedKph} />
       </div>
@@ -42,7 +41,7 @@ function DashboardPage() {
           tankCapacity={tankCapacityL}
         />
       </div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-6">
         <Odometer label="Trip" distance={tripKm} />
         <Odometer label="Total" distance={totalOdometerKm} />
         <RangeEstimator

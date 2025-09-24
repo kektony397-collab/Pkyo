@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface FuelGaugeProps {
@@ -15,6 +14,15 @@ const FuelGauge = React.memo(
     return (
       <div className="relative flex h-48 w-48 flex-col items-center justify-center">
         <svg className="absolute h-full w-full" viewBox="0 0 100 100">
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+              <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
           <circle
             className="stroke-current text-gray-700"
             strokeWidth="10"
@@ -34,6 +42,7 @@ const FuelGauge = React.memo(
             strokeDasharray="283"
             strokeDashoffset={strokeDashoffset}
             transform="rotate(-90 50 50)"
+            filter="url(#glow)"
           ></circle>
         </svg>
         <div className="text-center">

@@ -1,4 +1,3 @@
-
 export interface Settings {
   bikeModel: string;
   tankCapacityL: number;
@@ -13,6 +12,7 @@ export interface RefuelRecord {
   pricePerLiter?: number;
   totalCost?: number;
   odometerKm: number;
+  notes?: string;
 }
 
 export interface TripLog {

@@ -1,4 +1,3 @@
-
 import { NavLink } from 'react-router-dom';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -10,7 +9,7 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
 
 function Header() {
   return (
-    <header className="bg-black/30 shadow-lg backdrop-blur-sm">
+    <header className="bg-black/30 shadow-lg backdrop-blur-sm border-b border-white/10">
       <nav className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
